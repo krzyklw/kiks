@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gabarito', cursive;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #ff416e;
+    display: flex;
+}
+
+.container .corner-image {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+}
+
+.container .top-left {
+    top: 0;
+    left: 450px;
+    background-image: url('img/sticker2.gif');
+}
+
+.container .top-right {
+    top: 0;
+    right: 0;
+    background-image: url('img/sticker.gif');
+}
+
+.container .bottom-left {
+    bottom: 0;
+    left: 450px;
+    background-image: url('img/sticker3.gif');
+}
+
+.container .bottom-right {
+    bottom: 0;
+    right: 0;
+    background-image: url('img/sticker4.gif');
+}
+
+
+.container .imgbx {
+    width: 450px;
+    height: 100%;
+    background: url(img/hellokittybg.jpg);
+    background-size: cover;
+}
+
+.container .countdownbx {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: calc(100% - 450px);
+}
+
+.container .countdownbx h2 {
+    text-align: center;
+    font-size: 1.5em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 500;
+    line-height: 4em;
+}
+
+.container .countdownbx h2 span {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.container .countdownbx .countdown {
+    margin-top: 30px;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .countdownbx .countdown div {
+    position: relative;
+    width: 100px;
+    text-align: center;
+    color: #fff;
+    font-size: 2.5em;
+    font-weight: 500;
+    margin: 0 15px;
+    margin-top: -25px;
+}
+
+.container .countdownbx .countdown div:before {
+    content: 'text';
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    color: #fff;
+    font-size: 0.35em;
+    font-weight: 500;
+    line-height: 35px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.container .countdownbx .countdown div#months:before {
+    content: 'months';
+}
+
+.container .countdownbx .countdown div#days:before {
+    content: 'days';
+}
+
+.container .countdownbx .countdown div#hours:before {
+    content: 'hours';
+}
+
+.container .countdownbx .countdown div#minutes:before {
+    content: 'minutes';
+}
+
+.container .countdownbx .countdown div#seconds:before {
+    content: 'seconds';
+}
+
+.container .countdownbx .countdown div#seconds,
+.container .countdownbx .countdown div#seconds:before {
+    color: #fff;
+}
+
+.container .countdownbx button.click-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #ffffff;
+    color: #ff416e;
+    border: 2px solid #ff416e;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.container .countdownbx button.click-button:hover {
+    background-color: #ff416e;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    background-color: #f38db3;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    max-width: 100%;
+    border-radius: 10px
+}
+
+.popup img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.popup button {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #ff416e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.popup button:hover {
+    background-color: #e6005c;
+}
+
+.mark {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    color: #000;
+}
+
+@media (max-width: 991px) 
+{
+    .container .imgbx
+    {
+        display: none;
+    }
+    .container .countdownbx {
+        width: 100%;
+    }
+    .container .bottom-left {
+        left: 0px;
+    }
+    .container .top-left {
+        left: 0px;
+    }
+    .popup {
+        padding: 40px;
+    }
+    .popup img {
+        width: auto;
+        max-width: 400px;
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .container .countdownbx h2 
+    {
+        font-size: 1.1em;
+    }
+    .container .countdownbx .countdown {
+        height: 100px;
+    }
+    .container .countdownbx .countdown div {
+        width: 80px;
+        font-size: 2em;
+        margin: 0;
+        margin-top: -25px;
+    }
+    .popup img {
+        width: auto;
+        max-width: 400px;
+        height: auto; 
+    }
+}
